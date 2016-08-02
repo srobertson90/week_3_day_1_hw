@@ -22,6 +22,7 @@ Using the SQL Database file given to you as the source of data to answer the que
   Revision of concepts that we've learnt in SQL today
 
   1. Select the names of all users.
+
  ``` 
   SELECT name FROM users;
   
@@ -48,6 +49,7 @@ Using the SQL Database file given to you as the source of data to answer the que
   (18 rows)
 ```
   2. Select the names of all shows that cost less than £15.
+
 ```
    SELECT name FROM shows WHERE price < 15;
 
@@ -62,22 +64,27 @@ Using the SQL Database file given to you as the source of data to answer the que
    (6 rows)
 ```
   3. Insert a user with the name "Val Gibson" into the users table.
+
 ```
   INSERT INTO users (name) VALUES ('Val Gibson');
 ```
   4. Insert a record that Val Gibson wants to attend the show "Two girls, one cup of comedy".
+
 ```
   INSERT INTO shows_users (show_id, user_id) VALUES (12, 19);
 ```
   5. Updates the name of the "Val Gibson" user to be "Valerie Gibson".
+
 ```
   UPDATE users SET name = 'Valerie Gibson' WHERE name = 'Val Gibson';
 ```
   6. Deletes the user with the name 'Valerie Gibson'.
+
   ```
   DELETE FROM users WHERE name = 'Valerie Gibson';
   ```
   7. Deletes the shows for the user you just deleted.
+
   ```
   DELETE FROM shows_users WHERE user_id = 19;
   ```
@@ -87,6 +94,7 @@ Using the SQL Database file given to you as the source of data to answer the que
   This section involves more complex queries.  You will need to go and find out about aggregate funcions in SQL to answer some of the next questions.
 
   9. Select the names and prices of all shows, ordered by price in ascending order.
+
   ```
   SELECT name, price FROM shows ORDER BY price;
 
@@ -108,6 +116,7 @@ Using the SQL Database file given to you as the source of data to answer the que
   (13 rows)
   ```
   10. Select the average price of all shows.
+
   ```
   SELECT AVG(price) FROM shows;
 
@@ -117,6 +126,7 @@ Using the SQL Database file given to you as the source of data to answer the que
   (1 row)
   ```
   11. Select the price of the least expensive show.
+
   ```
   SELECT MIN(price) FROM shows;
 
@@ -126,6 +136,7 @@ Using the SQL Database file given to you as the source of data to answer the que
   (1 row)
   ```
   12. Select the sum of the price of all shows.
+
  ``` 
   SELECT SUM(price) FROM shows;
 
@@ -135,6 +146,7 @@ Using the SQL Database file given to you as the source of data to answer the que
   (1 row)
   ```
   13. Select the sum of the price of all shows whose prices is less than £20.
+
   ```
   SELECT SUM(price) FROM shows WHERE price < 20;
 
@@ -144,6 +156,7 @@ Using the SQL Database file given to you as the source of data to answer the que
   (1 row)
   ```
   14. Select the name and price of the most expensive show.
+
   ```
   SELECT name, price FROM shows WHERE price = (SELECT Max(price) FROM shows);
 
@@ -153,6 +166,7 @@ Using the SQL Database file given to you as the source of data to answer the que
   (1 row)
   ```
   15. Select the name and price of the second from cheapest show.
+
   ```
   SELECT name, price FROM shows WHERE price = (SELECT MIN( price ) FROM shows WHERE price > ( SELECT MIN( price ) FROM shows ));
 
@@ -162,6 +176,7 @@ Using the SQL Database file given to you as the source of data to answer the que
   (1 row)
   ```
   16. Select the names of all users whose names start with the letter "N".
+
   ```
   SELECT name FROM users WHERE name LIKE 'N%';
 
@@ -171,6 +186,7 @@ Using the SQL Database file given to you as the source of data to answer the que
    Natalie Simpson
    ```
   17. Select the names of users whose names contain "er".
+  
   ```
   SELECT name FROM users WHERE name LIKE '%er%';
 
