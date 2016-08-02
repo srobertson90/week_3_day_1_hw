@@ -23,7 +23,7 @@ Using the SQL Database file given to you as the source of data to answer the que
 
   1. Select the names of all users.
 
-``` 
+    ``` 
   SELECT name FROM users;
   
          name       
@@ -47,11 +47,11 @@ Using the SQL Database file given to you as the source of data to answer the que
    Renwick Drysdale
    Brian Morrice
   (18 rows)
-```
+    ```
 
   2. Select the names of all shows that cost less than £15.
-
-```
+ 
+    ```
    SELECT name FROM shows WHERE price < 15;
 
                name             
@@ -63,19 +63,19 @@ Using the SQL Database file given to you as the source of data to answer the que
     Urinetown
     Two girls, one cup of comedy
    (6 rows)
-```
+    ```
 
   3. Insert a user with the name "Val Gibson" into the users table.
 
-```
+    ```
   INSERT INTO users (name) VALUES ('Val Gibson');
-```
+    ```
 
   4. Insert a record that Val Gibson wants to attend the show "Two girls, one cup of comedy".
 
-```
+    ```
   INSERT INTO shows_users (show_id, user_id) VALUES (12, 19);
-```
+    ```
 
   5. Updates the name of the "Val Gibson" user to be "Valerie Gibson".
 
