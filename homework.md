@@ -23,7 +23,7 @@ Using the SQL Database file given to you as the source of data to answer the que
 
   1. Select the names of all users.
 
- ``` 
+``` 
   SELECT name FROM users;
   
          name       
